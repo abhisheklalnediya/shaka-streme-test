@@ -3,7 +3,7 @@
 // var manifestUri = `https://uselector.cdn.intigral.net/Titles/M0019480/M0019480.ism/manifest.mpd`;
 // 1080 VOD
 var manifestUri = `https://uselector.cdn.intigral.net/Titles/M0012400/M0012400.ism/manifest.mpd`;
-// var manifestUri = `"https://uselector.cdn.intigral.net/Titles/M0019020/M0019020.ism/manifest.mpd"`;
+// var manifestUri = `https://uselector.cdn.intigral.net/Titles/M0019020/M0019020.ism/manifest.mpd"`;
 // Live
 // var manifestUri = `="https://uselector.cdn.intigral.net/JAW1/JAW1.isml/manifest.mpd`;
 
