@@ -1,3 +1,6 @@
+// let useFilter = true;
+let useFilter = false;
+
 const uri = [
   // 'http://pop3he.cdn.intigral-ott.net/Titles/M0001881/M0001881_1.ism/manifest.mpd',
   // 'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019324/M0019324_1.ism/manifest.mpd',
@@ -12,12 +15,18 @@ const uri = [
   // 'https://uselector.cdn.intigral-ott.net/VOD/M0019324_RTEST/M0019324_RTEST.ism/manifest.mpd',
   // 'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019324/M0019324.ism/manifest.mpd',
 
+  'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019480/M0019480.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019324/M0019324_1.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/DAWP3/DAWP3.isml/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/DAWP4/DAWP4.isml/manifest.mpd'
+
+
 ];
 
 const filter = '?filter=((type=="video"%26%26MaxHeight<=2160)%7C%7C(type=="audio")%7C%7C(type=="textstream"))&codec=hevc';
+// const filter = '?filter=((type==%22video%22%26%26MaxHeight%3C=2160)||(type==%22audio%22%26%26FOURCC!=%22ac-3%22)%7C%7C(type==%22textstream%22))&codec=hevc';
 
 let i = 0;
-let useFilter = false;
 
 const drmServerList = {
   'com.widevine.alpha': 'https://wv.drm.intigral-ott.net:8063?deviceId=ZGI2MmY0ZTktYzVlMi0zMGM2LTg2YWMtMmNmMGE3YWE0ODA2',
@@ -52,7 +61,7 @@ window.addEventListener('keydown', (e) => {
     i = i >= uri.length ? uri.length-1 : i;
     i = i <= 0 ? 0 : i;
   // } else {
-    useFilter = true;
+    // useFilter = true;
   // }
   loadPlayer();
   }
@@ -62,7 +71,7 @@ window.addEventListener('keydown', (e) => {
       i += 1;
       i = i >= uri.length ? 0 : i;
     // } else {
-      useFilter = true;
+      // useFilter = true;
     // }
     loadPlayer();
   }
