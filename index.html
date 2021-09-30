@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Shaka Player compiled library: -->
-    <script src="./playerversion/shaka-2_5_20.js"></script>
-    <!-- Your application source: -->
-    <script data-consolejs-channel="bc8e02bc-10c8-d1cb-ecaf-8ac208c309db-player" src="https://remotejs.com/agent/agent.js"></script>
-    <script src="app.js"></script>
 
-  </head>
-  <body>
-    <div style="background-color: black; height: 98.5vh; display: flex; justify-content: center; align-items: center; flex-direction: column; color: cornsilk; font-size: 25px;" >
-    <p>SHAKA POC</p>
-    <video id="video"
-           width="1280"
-           controls autoplay
-           style="border: 1px solid #fff; background-color: dimgrey;"
-           ></video>
-           <div style="display: flex; ">
-           <p id="error" style="margin: 10px; "></p>
-           <p id="Quality" style="margin: 10px; "></p>
-           </div>
-           <p id="manifestUri" style="margin: 10px; text-align: center; ">  </p>
-        </div>   
-      
-  </body>
+<head>
+  <!-- Shaka Player compiled library: -->
+  <script src="./playerversion/3.2.0/shaka-player.compiled.debug.min.js"></script>
+  <script src="./utils/mpd-parser.min.js"></script>
+  <!-- Your application source: -->
+  <script data-consolejs-channel="bc8e02bc-10c8-d1cb-ecaf-8ac208c309db-player"
+    src="https://remotejs.com/agent/agent.js"></script>
+  <script src="app.js"></script>
+  <style>
+    .container {
+      background-color: black;
+      height: 98.5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: cornsilk;
+      font-size: 25px;
+    }
+
+    #video {
+      background-color: dimgrey;
+      width: 100%;
+    }
+
+    .infoSec {
+      position: absolute;
+      width: 80%;
+      height: auto;
+      background: rgba(2, 2, 2, 0.91);
+      border: 1px solid #DDD;
+      padding: 20px;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+    p#Quality {
+      font-family: monospace;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <video id="video" width="1080" controls autoplay></video>
+    <div class="infoSec">
+      <p id="manifestUri" style="margin: 10px; text-align: center; "> </p>
+      <H2>Tracks</H2>
+      <p id="Quality" style="margin: 10px; "></p>
+      <p id="error" style="margin: 10px; "></p>
+    </div>
+  </div>
+
+</body>
+
 </html>
