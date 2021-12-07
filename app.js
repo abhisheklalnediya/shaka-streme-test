@@ -2,24 +2,28 @@
 let useFilter = false;
 
 const uri = [
-  // 'http://pop3he.cdn.intigral-ott.net/Titles/M0001881/M0001881_1.ism/manifest.mpd',
-  // 'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019324/M0019324_1.ism/manifest.mpd',
-  // 'https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd',
-  // 'https://akm.cdn.intigral-ott.net/Titles/S000854602003/S000854602003.ism/manifest.mpd',
-  // 'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0020313/M0020313.ism/manifest.mpd',
-  // 'https://uselector.cdn.intigral-ott.net/Titles/M0020313/M0020313.ism/manifest.mpd',
-  // 'https://uselector.cdn.intigral-ott.net/Titles/M0020313/M0020313.ism/manifest.mpd',
-  // 'https://akm.cdn.intigral-ott.net/VOD/M0020313_CLR_HEVC/M0020313_CLR_HEVC.ism/manifest.mpd',
-  // 'https://akm.cdn.intigral-ott.net/VOD/M0020313_CLR_AVC/M0020313_CLR_AVC.ism/manifest.mpd',
-  // 'https://uselector.cdn.intigral-ott.net/POP2_HEVC/POP2_HEVC.isml/manifest.mpd',
-  // 'https://uselector.cdn.intigral-ott.net/VOD/M0019324_RTEST/M0019324_RTEST.ism/manifest.mpd',
-  // 'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019324/M0019324.ism/manifest.mpd',
+  'http://pop3he.cdn.intigral-ott.net/Titles/M0001881/M0001881_1.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019324/M0019324_1.ism/manifest.mpd',
+  'https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd',
+  'https://akm.cdn.intigral-ott.net/Titles/S000854602003/S000854602003.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0020313/M0020313.ism/manifest.mpd',
+  'https://uselector.cdn.intigral-ott.net/Titles/M0020313/M0020313.ism/manifest.mpd',
+  'https://uselector.cdn.intigral-ott.net/Titles/M0020313/M0020313.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/VOD/M0020313_CLR_HEVC/M0020313_CLR_HEVC.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/VOD/M0020313_CLR_AVC/M0020313_CLR_AVC.ism/manifest.mpd',
+  'https://uselector.cdn.intigral-ott.net/POP2_HEVC/POP2_HEVC.isml/manifest.mpd',
+  'https://uselector.cdn.intigral-ott.net/VOD/M0019324_RTEST/M0019324_RTEST.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019324/M0019324.ism/manifest.mpd',
 
   'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019480/M0019480.ism/manifest.mpd',
   'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0019324/M0019324_1.ism/manifest.mpd',
   'https://akm.cdn.intigral-ott.net/DAWP3/DAWP3.isml/manifest.mpd',
-  'https://akm.cdn.intigral-ott.net/DAWP4/DAWP4.isml/manifest.mpd'
+  'https://akm.cdn.intigral-ott.net/DAWP4/DAWP4.isml/manifest.mpd',
 
+  'https://akm.cdn.intigral-ott.net/Titles_HEVC/M0021199/M0021199.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/Titles/M0019324/M0019324_1.ism/manifest.mpd',
+  'https://akm.cdn.intigral-ott.net/DSC_HEVC_DLBY/DSC_HEVC_DLBY.isml/manifest.mpd?begin=1634626500&end=1634629500&filter=((type==%22video%22%26%26MaxHeight%3C=1080)||(type==%22audio%22)%7C%7C(type==%22textstream%22))&codec=hevc',
+  'https://akm.cdn.intigral-ott.net/DSC_HEVC_DLBY/DSC_HEVC_DLBY.isml/manifest.mpd?begin=1634626500&end=1634629500'
 
 ];
 
@@ -29,8 +33,8 @@ const filter = '?filter=((type=="video"%26%26MaxHeight<=2160)%7C%7C(type=="audio
 let i = 0;
 
 const drmServerList = {
-  'com.widevine.alpha': 'https://wv.drm.intigral-ott.net:8063?deviceId=ZGI2MmY0ZTktYzVlMi0zMGM2LTg2YWMtMmNmMGE3YWE0ODA2',
-  // 'com.microsoft.playready': 'http://pr.drm.intigral-ott.net/PlayReady/RightsManager.asmx?deviceId=ZTcyODZjMTYtZGY5ZC0zYTc1LWI2ZTItNWMyYWJmZjhlYTE3',
+  'com.widevine.alpha': 'https://wv.drm.intigral-ott.net:8063?deviceId=NTVhOGYzZGEtOWEyNy0zZTc4LTljMDItYzE2NTQ2Yzg3YjFj',
+  // 'com.microsoft.playready': 'http://pr.drm.intigral-ott.net/PlayReady/RightsManager.asmx?deviceId=NTVhOGYzZGEtOWEyNy0zZTc4LTljMDItYzE2NTQ2Yzg3YjFj',
 };
 
 const loadPlayer = (m=null) => {
@@ -144,26 +148,6 @@ function initPlayer() {
   });
 
   loadPlayer();
-
-
-  const resposeFilter = (type, response) => {
-    if(type === 0 ) {
-      console.log('%%%% response type:', type, 'response:', response);
-      const manifestUri =  response.uri;
-      fetch(manifestUri).then(res=>{
-        res.text().then(manifest=>{
-
-          var parsedManifest = mpdParser.parse(manifest, { manifestUri });
-          console.log(parsedManifest)
-        });
-
-      });
-
-    }
-  };
-
-  // Debuging Shaka network engine
-  player.getNetworkingEngine().registerResponseFilter(resposeFilter);
 
   player.addEventListener('error', onErrorEvent);
 
